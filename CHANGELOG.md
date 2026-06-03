@@ -1,3 +1,15 @@
+## [Unreleased]
+
+### Changes
+
+- Migrate fleet_server_host, fleet_output, and fleet_custom_integration resources to KibanaResource envelope for consistent connection handling and reduced boilerplate. ([#3554](https://github.com/elastic/terraform-provider-elasticstack/pull/3554))
+- Add elasticstack_elasticsearch_ml_trained_model_alias resource ([#3533](https://github.com/elastic/terraform-provider-elasticstack/pull/3533))
+- Add data source for reading Elasticsearch ML trained model metadata. ([#3531](https://github.com/elastic/terraform-provider-elasticstack/pull/3531))
+- Extended plan-time `params` validation for `elasticstack_kibana_alerting_rule` to cover all 35 rule types known to the generated kbapi client via discriminator dispatch, replacing the previous 12-entry hand-maintained map. This provides stricter validation for previously pass-through types such as `observability.rules.custom_threshold`. ([#3510](https://github.com/elastic/terraform-provider-elasticstack/pull/3510))
+- Adds Terraform resource and data source for managing the Kibana Security Entity Store. ([#3497](https://github.com/elastic/terraform-provider-elasticstack/pull/3497))
+- Fix 404 error on fleet_server_host update when host_id is omitted or changed ([#3508](https://github.com/elastic/terraform-provider-elasticstack/pull/3508))
+- Add agent_policy_ids support to elasticstack_fleet_elastic_defend_integration_policy and change agent_policy_id from Required to Optional. ([#3492](https://github.com/elastic/terraform-provider-elasticstack/pull/3492))
+
 ## [0.16.1] - 2026-06-01
 
 ### Changes
